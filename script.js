@@ -435,11 +435,13 @@ function getAIMove(state, player, difficulty) {
     case 3: // Smart (1-2 ply)
       move = aiSmart(state, player);
       break;
-    case 4: // Expert (4 ply minimax)
-      move = minimax(state, player, 0, 4, -Infinity, Infinity, true).move;
+    case 4: // Expert (variable 3-6 ply minimax)
+      const expertDepth = Math.floor(Math.random() * 4) + 3; // Random between 3-6
+      move = minimax(state, player, 0, expertDepth, -Infinity, Infinity, true).move;
       break;
-    case 5: // Master (8 ply minimax)
-      move = minimax(state, player, 0, 8, -Infinity, Infinity, true).move;
+    case 5: // Master (variable 6-12 ply minimax)
+      const masterDepth = Math.floor(Math.random() * 7) + 6; // Random between 6-12
+      move = minimax(state, player, 0, masterDepth, -Infinity, Infinity, true).move;
       break;
     case 6: // Perfect (20 ply minimax - near complete)
       move = minimax(state, player, 0, 20, -Infinity, Infinity, true).move;
