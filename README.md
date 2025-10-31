@@ -1,6 +1,6 @@
 # 🖐️ 1+1 Hand Game
 
-[![GitHub Pages](https://img.shields.io/badge/demo-live-success)](https://yourusername.github.io/one-plus-one-game/)
+[![GitHub Pages](https://img.shields.io/badge/demo-live-success)](https://owen-liuyuxuan.github.io/one_plus_one/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Language](https://img.shields.io/badge/languages-EN%20%7C%20中文-orange)](README.md)
 
@@ -11,14 +11,14 @@ A classic childhood strategy game brought to the web! Challenge your friends or 
 
 ## 🚀 Play Online
 
-**[Play Now!](https://yourusername.github.io/one-plus-one-game/)**
+**[Play Now!](https://owen-liuyuxuan.github.io/one_plus_one/)**
 
 No installation required - just open in your browser and start playing!
 
 
 ## 🎮 Game Overview
 
-**1+1 Hand Game** (also known as "Finger Game" or "Number Hands") is a traditional two-player strategy game where players use numbers on their hands to outmaneuver their opponent. The goal is simple: eliminate both of your opponent's hands while keeping at least one of yours alive!
+**1+1 Hand Game** (also known as "Finger Game" or "Number Hands") is a traditional two-player strategy game where players use numbers on their hands to outmaneuver their opponent. The goal is simple: get both of your hands **finished** (showing ✗) to win before your opponent's hands are finished.
 
 ## 🎯 Game Rules
 
@@ -77,8 +77,8 @@ No installation required - just open in your browser and start playing!
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/one-plus-one-game.git
-   cd one-plus-one-game
+   git clone https://github.com/Owen-Liuyuxuan/one_plus_one.git
+   cd one_plus_one
    ```
 
 2. **Open in browser**
@@ -97,7 +97,7 @@ That's it! No build process or dependencies needed.
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/yourusername/one-plus-one-game.git
+   git remote add origin https://github.com/Owen-Liuyuxuan/one_plus_one.git
    git push -u origin main
    ```
 
@@ -105,7 +105,7 @@ That's it! No build process or dependencies needed.
    - Go to repository **Settings** → **Pages**
    - Select **main** branch as source
    - Click **Save**
-   - Your game will be live at `https://yourusername.github.io/one-plus-one-game/`
+   - Your game will be live at `https://owen-liuyuxuan.github.io/one_plus_one/`
 
 ### Other Hosting Options
 - **Netlify**: Drag and drop `index.html`
@@ -138,8 +138,8 @@ Works on all modern browsers:
 ## 📞 Contact
 
 - **Author**: Owen
-- **GitHub**: [@yourusername](https://github.com/yourusername)
-- **Issues**: [Report a bug](https://github.com/yourusername/one-plus-one-game/issues)
+- **GitHub**: [@Owen-Liuyuxuan](https://github.com/Owen-Liuyuxuan)
+- **Issues**: [Report a bug](https://github.com/Owen-Liuyuxuan/one_plus_one/issues)
 
 ---
 

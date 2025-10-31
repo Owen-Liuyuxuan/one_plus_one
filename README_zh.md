@@ -1,6 +1,6 @@
 # 🖐️ 1+1 手指游戏
 
-[![GitHub Pages](https://img.shields.io/badge/demo-在线演示-success)](https://yourusername.github.io/one-plus-one-game/)
+[![GitHub Pages](https://img.shields.io/badge/demo-在线演示-success)](https://owen-liuyuxuan.github.io/one_plus_one/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Language](https://img.shields.io/badge/languages-EN%20%7C%20中文-orange)](README.md)
 
@@ -10,13 +10,13 @@
 
 ## 🚀 在线游玩
 
-**[立即开始游戏！](https://yourusername.github.io/one-plus-one-game/)**
+**[立即开始游戏！](https://owen-liuyuxuan.github.io/one_plus_one/)**
 
 无需安装 - 只需在浏览器中打开即可开始游戏！
 
 ## 🎮 游戏简介
 
-**1+1 手指游戏**（在我小时候就叫"1+1"）是一款双人策略游戏，玩家通过手上的数字来智胜对手。目标很简单：淘汰对手的两只手，同时保持自己至少有一只手存活！
+**1+1 手指游戏**（在我小时候就叫"1+1"）是一款双人策略游戏，玩家通过手上的数字来智胜对手。目标很简单：在对手之前让自己的两只手的数字到达10完成！
 
 ## 🎯 游戏规则
 
@@ -75,8 +75,8 @@
 
 1. **克隆仓库**
    ```bash
-   git clone https://github.com/yourusername/one-plus-one-game.git
-   cd one-plus-one-game
+   git clone https://github.com/Owen-Liuyuxuan/one_plus_one.git
+   cd one_plus_one
    ```
 
 2. **在浏览器中打开**
@@ -98,7 +98,7 @@
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/yourusername/one-plus-one-game.git
+   git remote add origin https://github.com/Owen-Liuyuxuan/one_plus_one.git
    git push -u origin main
    ```
 
@@ -106,7 +106,7 @@
    - 进入仓库 **Settings** → **Pages**
    - 选择 **main** 分支作为源
    - 点击 **Save**
-   - 你的游戏将在 `https://yourusername.github.io/one-plus-one-game/` 上线
+   - 你的游戏将在 `https://owen-liuyuxuan.github.io/one_plus_one/` 上线
 
 ### 其他托管选项
 - **Netlify**：拖放 `index.html`
@@ -129,8 +129,8 @@ P1 移动:   P1[5,1] vs P2[3,1]  (P1 将 P2 的 3 加到自己手上)
 ## 📞 联系方式
 
 - **作者**: Owen
-- **GitHub**: [@yourusername](https://github.com/yourusername)
-- **问题反馈**: [报告 Bug](https://github.com/yourusername/one-plus-one-game/issues)
+- **GitHub**: [@Owen-Liuyuxuan](https://github.com/Owen-Liuyuxuan)
+- **问题反馈**: [报告 Bug](https://github.com/Owen-Liuyuxuan/one_plus_one/issues)
 
 ---
 
