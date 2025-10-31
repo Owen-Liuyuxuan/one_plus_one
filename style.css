@@ -1,0 +1,385 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  width: 100%;
+  padding: 40px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: #667eea;
+  font-size: 2.5em;
+  flex: 1;
+}
+
+.language-selector {
+  display: flex;
+  gap: 5px;
+  background: #f0f4ff;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.lang-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+.lang-btn.active {
+  background: #667eea;
+  color: white;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 1.1em;
+}
+
+.mode-selection {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.mode-btn {
+  padding: 15px 30px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #667eea;
+  color: white;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+.mode-btn:hover {
+  background: #764ba2;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mode-btn.active {
+  background: #764ba2;
+}
+
+.player-order-selection {
+  display: none;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.player-order-selection.show {
+  display: flex;
+}
+
+.order-label {
+  font-weight: bold;
+  color: #333;
+  align-self: center;
+}
+
+.order-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #e9ecef;
+  color: #495057;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+.order-btn:hover {
+  background: #dee2e6;
+}
+
+.order-btn.active {
+  background: #667eea;
+  color: white;
+}
+
+.game-board {
+  display: none;
+}
+
+.game-board.active {
+  display: block;
+}
+
+.player-area {
+  margin: 30px 0;
+  padding: 25px;
+  border-radius: 15px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.player-area.active {
+  background: #f0f4ff;
+  border: 3px solid #667eea;
+}
+
+.player-area.inactive {
+  background: #f9f9f9;
+  opacity: 0.6;
+}
+
+.player-area.winner {
+  background: #fff8e1;
+  border: 3px solid #ffc107;
+}
+
+.player-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.winner-badge {
+  display: none;
+  background: #ffc107;
+  color: #212529;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.winner-badge.show {
+  display: inline-block;
+}
+
+.hands-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.hand {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 4px solid #ddd;
+  background: white;
+}
+
+.hand.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.hand.out {
+  background: #ccc;
+  color: #888;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.hand.selectable:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.hand.target:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 20px rgba(118, 75, 162, 0.4);
+  border-color: #764ba2;
+}
+
+.status-message {
+  text-align: center;
+  font-size: 1.3em;
+  padding: 20px;
+  background: #fff3cd;
+  border-radius: 10px;
+  margin: 20px 0;
+  color: #856404;
+  font-weight: bold;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 25px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #764ba2;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+}
+
+.rules {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.rules h3 {
+  color: #667eea;
+  margin-bottom: 10px;
+}
+
+.rules ul {
+  margin-left: 20px;
+  line-height: 1.8;
+}
+
+.winner-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.winner-modal.show {
+  display: flex;
+}
+
+.winner-content {
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  animation: bounceIn 0.5s;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.winner-content h2 {
+  font-size: 3em;
+  color: #667eea;
+  margin-bottom: 20px;
+}
+
+.winner-content p {
+  font-size: 1.5em;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+  }
+  
+  .hand {
+    width: 90px;
+    height: 90px;
+    font-size: 2.5em;
+  }
+  
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .language-selector {
+    align-self: flex-end;
+  }
+  
+  .mode-selection {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .player-order-selection {
+    flex-direction: column;
+  }
+  
+  .order-label {
+    margin-bottom: 10px;
+  }
+  
+  .hands-container {
+    gap: 15px;
+  }
+}
