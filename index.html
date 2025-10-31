@@ -1,89 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1+1 Hand Game</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1+1 Hand Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="container">
-    <div class="header">
-      <div style="width: 100px;"></div>
-      <h1 data-i18n="title">🖐️ 1+1 Hand Game 🖐️</h1>
-      <div class="language-selector">
-        <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
-        <button class="lang-btn" onclick="setLanguage('zh')">中文</button>
-      </div>
-    </div>
-    <p class="subtitle" data-i18n="subtitle">A Classic Two-Hand Strategy Game</p>
-
-    <div class="mode-selection">
-      <button class="mode-btn active" onclick="setMode('pvp')" data-i18n="mode-pvp">Two Players</button>
-      <button class="mode-btn" onclick="setMode('pvc')" data-i18n="mode-pvc">vs Computer</button>
-    </div>
-
-    <div class="player-order-selection" id="playerOrderSelection">
-      <span class="order-label" data-i18n="choose-order">You play as:</span>
-      <button class="order-btn active" onclick="setPlayerOrder(1)" data-i18n="first-move">First (Player 1)</button>
-      <button class="order-btn" onclick="setPlayerOrder(2)" data-i18n="second-move">Second (Player 2)</button>
-    </div>
-
-    <div id="gameBoard" class="game-board">
-      <div id="player1Area" class="player-area active">
-        <div class="player-name">
-          <span id="player1Name" data-i18n="player1">Player 1</span>
-          <span class="winner-badge" id="winner1Badge" data-i18n="winner">WINNER</span>
+    <div class="container">
+        <div class="header">
+            <div style="width: 100px;"></div>
+            <h1 data-i18n="title">🖐️ 1+1 Hand Game 🖐️</h1>
+            <div class="language-selector">
+                <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" onclick="setLanguage('zh')">中文</button>
+            </div>
         </div>
-        <div class="hands-container">
-          <div class="hand" id="p1h1" data-player="1" data-hand="0">1</div>
-          <div class="hand" id="p1h2" data-player="1" data-hand="1">1</div>
-        </div>
-      </div>
+        <p class="subtitle" data-i18n="subtitle">A Classic Two-Hand Strategy Game</p>
 
-      <div class="status-message" id="statusMessage">
-        Player 1's turn: Select one of your hands
-      </div>
-
-      <div id="player2Area" class="player-area inactive">
-        <div class="player-name">
-          <span id="player2Name" data-i18n="player2">Player 2</span>
-          <span class="winner-badge" id="winner2Badge" data-i18n="winner">WINNER</span>
+        <div class="mode-selection">
+            <button class="mode-btn active" onclick="setMode('pvp')" data-i18n="mode-pvp">Two Players</button>
+            <button class="mode-btn" onclick="setMode('pvc')" data-i18n="mode-pvc">vs Computer</button>
         </div>
-        <div class="hands-container">
-          <div class="hand" id="p2h1" data-player="2" data-hand="0">1</div>
-          <div class="hand" id="p2h2" data-player="2" data-hand="1">1</div>
-        </div>
-      </div>
 
-      <div class="controls">
-        <button class="btn btn-primary" onclick="startGame()" data-i18n="new-game">New Game</button>
-        <button class="btn btn-secondary" onclick="toggleRules()" data-i18n="show-rules">Rules</button>
-      </div>
+        <div class="player-order-selection" id="playerOrderSelection">
+            <span class="order-label" data-i18n="choose-order">You play as:</span>
+            <button class="order-btn active" onclick="setPlayerOrder(1)" data-i18n="first-move">First (Player 1)</button>
+            <button class="order-btn" onclick="setPlayerOrder(2)" data-i18n="second-move">Second (Player 2)</button>
+        </div>
+
+        <div class="ai-difficulty-selection" id="aiDifficulty">
+            <span class="difficulty-label" data-i18n="ai-level">AI Difficulty:</span>
+            <button class="difficulty-btn active" onclick="setDifficulty(1)" data-i18n="ai-random">Random</button>
+            <button class="difficulty-btn" onclick="setDifficulty(2)" data-i18n="ai-greedy">Greedy</button>
+            <button class="difficulty-btn" onclick="setDifficulty(3)" data-i18n="ai-smart">Smart</button>
+            <button class="difficulty-btn" onclick="setDifficulty(4)" data-i18n="ai-expert">Expert</button>
+            <button class="difficulty-btn" onclick="setDifficulty(5)" data-i18n="ai-master">Master</button>
+            <button class="difficulty-btn" onclick="setDifficulty(6)" data-i18n="ai-perfect">Perfect</button>
+        </div>
+
+        <div id="gameBoard" class="game-board">
+            <div id="player1Area" class="player-area active">
+                <div class="player-name">
+                    <span id="player1Name" data-i18n="player1">Player 1</span>
+                    <span class="winner-badge" id="winner1Badge" data-i18n="winner">WINNER</span>
+                </div>
+                <div class="hands-container">
+                    <div class="hand" id="p1h1" data-player="1" data-hand="0">1</div>
+                    <div class="hand" id="p1h2" data-player="1" data-hand="1">1</div>
+                </div>
+            </div>
+
+            <div class="status-message" id="statusMessage">
+                Player 1's turn: Select one of your hands
+            </div>
+            
+            <div class="ai-thinking" id="aiThinking" data-i18n="ai-thinking">🤖 AI is thinking...</div>
+
+            <div id="player2Area" class="player-area inactive">
+                <div class="player-name">
+                    <span id="player2Name" data-i18n="player2">Player 2</span>
+                    <span class="winner-badge" id="winner2Badge" data-i18n="winner">WINNER</span>
+                </div>
+                <div class="hands-container">
+                    <div class="hand" id="p2h1" data-player="2" data-hand="0">1</div>
+                    <div class="hand" id="p2h2" data-player="2" data-hand="1">1</div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-primary" onclick="startGame()" data-i18n="new-game">New Game</button>
+                <button class="btn btn-secondary" onclick="toggleRules()" data-i18n="show-rules">Rules</button>
+            </div>
+        </div>
+
+        <div class="rules" id="rules">
+            <h3 data-i18n="rules">📖 Game Rules</h3>
+            <ul>
+                <li data-i18n="rules-1">Both players start with [1, 1] on their hands</li>
+                <li data-i18n="rules-2">On your turn, select one of your hands, then select one of opponent's hands</li>
+                <li data-i18n="rules-3">Add the opponent's hand value to your selected hand</li>
+                <li data-i18n="rules-4">If the result equals 10, that hand is finished (shows ✗)</li>
+                <li data-i18n="rules-5">If the result exceeds 10, it resets to 1</li>
+                <li data-i18n="rules-6">Win by getting both of your hands finished</li>
+                <li data-i18n="rules-7">Strategy tip: Force your opponent into difficult positions!</li>
+            </ul>
+        </div>
     </div>
 
-    <div class="rules" id="rules">
-      <h3 data-i18n="rules">📖 Game Rules</h3>
-      <ul>
-        <li data-i18n="rules-1">Both players start with [1, 1] on their hands</li>
-        <li data-i18n="rules-2">On your turn, select one of your hands, then select one of opponent's hands</li>
-        <li data-i18n="rules-3">Add the opponent's hand value to your selected hand</li>
-        <li data-i18n="rules-4">If the result equals 10, that hand is finished (shows ✗)</li>
-        <li data-i18n="rules-5">If the result exceeds 10, it resets to 1</li>
-        <li data-i18n="rules-6">Win by getting both of your hands finished</li>
-        <li data-i18n="rules-7">Strategy tip: Force your opponent into difficult positions!</li>
-      </ul>
+    <div class="winner-modal" id="winnerModal">
+        <div class="winner-content">
+            <h2>🎉 Victory! 🎉</h2>
+            <p id="winnerText">Player 1 Wins!</p>
+            <button class="btn btn-primary" onclick="closeWinnerModal()">Play Again</button>
+        </div>
     </div>
-  </div>
 
-  <div class="winner-modal" id="winnerModal">
-    <div class="winner-content">
-      <h2>🎉 Victory! 🎉</h2>
-      <p id="winnerText">Player 1 Wins!</p>
-      <button class="btn btn-primary" onclick="closeWinnerModal()">Play Again</button>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -52,7 +52,13 @@ No installation required - just open in your browser and start playing!
 - **Two Players (PvP)**: Play locally with a friend on the same device
 - **vs Computer (PvC)**: Challenge the AI in single-player mode
   - Choose to play first or second
-  - Computer uses strategic random moves
+  - **Six AI Difficulty Levels**:
+    - **Random**: Makes completely random valid moves
+    - **Greedy**: Chooses moves with the best immediate outcome
+    - **Smart**: Looks ahead 1-2 moves with strategic heuristics
+    - **Expert**: Uses 4-ply minimax with alpha-beta pruning
+    - **Master**: Advanced 8-ply minimax for serious challenges
+    - **Perfect**: Near-perfect play with deep 20-ply search
 
 ### 🌐 Bilingual Support
 - **English** and **中文 (Chinese)** language options
