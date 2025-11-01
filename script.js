@@ -444,7 +444,7 @@ function getAIMove(state, player, difficulty) {
       move = minimax(state, player, 0, masterDepth, -Infinity, Infinity, true).move;
       break;
     case 6: // Perfect (20 ply minimax - near complete)
-      move = minimax(state, player, 0, 20, -Infinity, Infinity, true).move;
+      move = minimax(state, player, 0, 30, -Infinity, Infinity, true).move;
       break;
     default:
       move = aiSmart(state, player);
