@@ -443,7 +443,7 @@ function getAIMove(state, player, difficulty) {
       const masterDepth = Math.floor(Math.random() * 7) + 6; // Random between 6-12
       move = minimax(state, player, 0, masterDepth, -Infinity, Infinity, true).move;
       break;
-    case 6: // Perfect (20 ply minimax - near complete)
+    case 6: // Perfect (30 ply minimax - near complete)
       move = minimax(state, player, 0, 30, -Infinity, Infinity, true).move;
       break;
     default:

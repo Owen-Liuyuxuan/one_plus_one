@@ -58,7 +58,7 @@ No installation required - just open in your browser and start playing!
     - **Smart**: Looks ahead 1-2 moves with strategic heuristics
     - **Expert**: Uses variable 3-6 ply minimax with alpha-beta pruning for unpredictable gameplay
     - **Master**: Advanced variable 6-12 ply minimax for serious challenges with dynamic depth
-    - **Perfect**: Near-perfect play with deep 20-ply search
+    - **Perfect**: Near-perfect play with deep 30-ply search
 
 ### 🌐 Bilingual Support
 - **English** and **中文 (Chinese)** language options
